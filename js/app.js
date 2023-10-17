@@ -1,7 +1,6 @@
 
 // - visualizzare in pagina 5 num casuali
 let numAlert = giveRandomNumberToArray(5);
-console.log(numAlert)
 
 
 // - far partire un timer di 30sec
@@ -12,13 +11,14 @@ let idInterval = setInterval(() => {
     counter--
     timerDOMElement.innerHTML = counter
      if (counter === 0){
-         clearInterval(idInterval)
+        clearInterval(idInterval)
+        givePromptToArray(5)
     }
 }, 1000)
-console.log(idInterval) 
 
 
-// - Dopo 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt
+// - l'utente inserisce, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt
+// let userChoice = givePromptToArray(5)
 
 // - il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
@@ -35,4 +35,12 @@ function giveRandomNumberToArray(max) {
         alert(randomNumberGenerator())
     } while (arrayNum.length < max); 
     console.log(arrayNum)
+}
+
+function givePromptToArray(max) {
+    const arrayPrompt = []
+    do {
+        arrayPrompt.push(prompt("Inserisci i numeri"))
+    } while (arrayPrompt.length < max); 
+    console.log(arrayPrompt)
 }
